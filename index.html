@@ -583,6 +583,77 @@
   .btn-green { background: linear-gradient(135deg, var(--green), var(--green-light)); }
   .btn-green:hover { box-shadow: 0 6px 24px rgba(26, 122, 80, 0.25); transform: translateY(-2px); }
 
+  .btn-orange { background: linear-gradient(135deg, #b45309, #d97706); }
+  .btn-orange:hover { box-shadow: 0 6px 24px rgba(180, 83, 9, 0.25); transform: translateY(-2px); }
+
+  .btn-purple { background: linear-gradient(135deg, #6b21a8, #7c3aed); }
+  .btn-purple:hover { box-shadow: 0 6px 24px rgba(107, 33, 168, 0.25); transform: translateY(-2px); }
+
+  /* Business service cards - 4 column row */
+  .biz-services-header { text-align: center; margin-top: 64px; margin-bottom: 32px; }
+  .biz-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .biz-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .biz-card:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    transform: translateY(-3px);
+  }
+
+  .biz-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .biz-card.card-tax::after { background: linear-gradient(90deg, #1a5a8c, #2d7ab5); }
+  .biz-card.card-gl::after { background: linear-gradient(90deg, #1a7a50, #2d9a6a); }
+  .biz-card.card-garage::after { background: linear-gradient(90deg, #b45309, #d97706); }
+  .biz-card.card-auto::after { background: linear-gradient(90deg, #6b21a8, #7c3aed); }
+
+  .biz-card .biz-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+  .biz-card.card-tax .biz-icon { background: rgba(26,90,140,0.08); border: 1px solid rgba(26,90,140,0.15); }
+  .biz-card.card-gl .biz-icon { background: rgba(26,122,80,0.08); border: 1px solid rgba(26,122,80,0.15); }
+  .biz-card.card-garage .biz-icon { background: rgba(180,83,9,0.08); border: 1px solid rgba(180,83,9,0.15); }
+  .biz-card.card-auto .biz-icon { background: rgba(107,33,168,0.08); border: 1px solid rgba(107,33,168,0.15); }
+
+  .biz-card h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px; font-weight: 700;
+    color: var(--text); margin: 0 0 8px;
+  }
+  .biz-card p {
+    font-size: 13px; color: var(--text-secondary);
+    line-height: 1.6; margin: 0 0 16px;
+  }
+  .biz-card ul {
+    list-style: none; padding: 0; margin: 0 0 20px;
+  }
+  .biz-card ul li {
+    font-size: 12.5px; color: var(--text-secondary);
+    padding: 5px 0; display: flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .biz-card ul li:last-child { border-bottom: none; }
+  .biz-card ul li svg { flex-shrink: 0; }
+
   /* ═══ DEMO PREVIEWS ═══ */
   .demos { background: var(--white); }
 
@@ -1335,6 +1406,7 @@
   /* ═══ RESPONSIVE ═══ */
   @media (max-width: 1024px) {
     .services-grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; }
+    .biz-grid { grid-template-columns: 1fr 1fr; }
     .demos-grid { grid-template-columns: 1fr; max-width: 540px; margin: 56px auto 0; }
     .steps-grid { grid-template-columns: 1fr 1fr; }
     .platform-grid { grid-template-columns: 1fr 1fr; }
@@ -1356,6 +1428,7 @@
     .hero-actions { flex-direction: column; align-items: center; }
     .steps-grid { grid-template-columns: 1fr; }
     .platform-grid { grid-template-columns: 1fr; }
+    .biz-grid { grid-template-columns: 1fr; }
     .who-grid { grid-template-columns: 1fr 1fr; }
     .cta-inner { padding: 44px 24px; }
     .cta-buttons { flex-direction: column; align-items: center; }
@@ -1477,7 +1550,7 @@
 <section class="services" id="services">
   <div class="section-inner">
     <div class="services-header reveal">
-      <div class="section-label">Two Powerful Services</div>
+      <div class="section-label">Our Platform</div>
       <h2 class="section-title">Everything Your Shop Needs.<br>One Platform.</h2>
       <p class="section-desc">Whether you're a solo detailer or running a multi-bay shop, we've got you covered with tools built specifically for auto care professionals.</p>
     </div>
@@ -1535,6 +1608,76 @@
           <span class="period">/month — 14-day free trial</span>
         </div>
         <a href="#" class="btn btn-service btn-green">Start Free Trial <span class="btn-arrow">→</span></a>
+      </div>
+
+    </div>
+
+    <!-- BUSINESS SERVICES -->
+    <div class="biz-services-header reveal">
+      <div class="section-label">Business Services</div>
+      <h2 class="section-title" style="font-size: clamp(1.4rem, 3vw, 2rem);">Protect & Grow Your <span class="gold">Business</span></h2>
+      <p class="section-desc" style="margin: 0 auto;">Tax prep, insurance, and more — tailored for auto care professionals.</p>
+    </div>
+    <div class="biz-grid">
+
+      <!-- TAX PREP -->
+      <div class="biz-card card-tax reveal">
+        <div class="biz-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a5a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h4>Tax Preparation</h4>
+        <p>Expert tax prep built for small auto care businesses. Maximize deductions and stay compliant.</p>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a5a8c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Quarterly & year-end filing</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a5a8c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Industry-specific deductions</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a5a8c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1099 & W-2 preparation</li>
+        </ul>
+        <a href="services.html" class="btn btn-service btn-blue" style="font-size: 13px; padding: 12px;">Learn More <span class="btn-arrow">→</span></a>
+      </div>
+
+      <!-- GENERAL LIABILITY -->
+      <div class="biz-card card-gl reveal">
+        <div class="biz-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a7a50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>General Liability</h4>
+        <p>Protect your business from unexpected claims with coverage designed for auto care pros.</p>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a7a50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Property damage coverage</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a7a50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Bodily injury protection</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a7a50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Affordable monthly plans</li>
+        </ul>
+        <a href="quote.html?service=gl" class="btn btn-service btn-green" style="font-size: 13px; padding: 12px;">Get a Free Quote <span class="btn-arrow">→</span></a>
+      </div>
+
+      <!-- GARAGE & SHOP -->
+      <div class="biz-card card-garage reveal">
+        <div class="biz-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h4>Garage & Shop Insurance</h4>
+        <p>Comprehensive coverage for your physical location, equipment, and inventory.</p>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Building & property protection</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Equipment & tool coverage</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Business interruption</li>
+        </ul>
+        <a href="quote.html?service=garage" class="btn btn-service btn-orange" style="font-size: 13px; padding: 12px;">Get a Free Quote <span class="btn-arrow">→</span></a>
+      </div>
+
+      <!-- AUTO & VEHICLE -->
+      <div class="biz-card card-auto reveal">
+        <div class="biz-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6b21a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"/><path d="M16 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-1"/><path d="M1 14h15"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h4>Auto & Vehicle Insurance</h4>
+        <p>Coverage for business vehicles and personal cars used for mobile detailing.</p>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b21a8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Commercial auto coverage</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b21a8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Mobile detailing van/truck</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b21a8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Multi-vehicle fleet discounts</li>
+        </ul>
+        <a href="quote.html?service=auto" class="btn btn-service btn-purple" style="font-size: 13px; padding: 12px;">Get a Free Quote <span class="btn-arrow">→</span></a>
       </div>
 
     </div>
@@ -1695,38 +1838,6 @@
       </div>
     </div>
 
-    <!-- Business Services sub-section -->
-    <div class="reveal" style="margin-top: 80px;">
-      <div class="section-label">Business Services</div>
-      <h2 class="section-title" style="font-size: clamp(1.5rem, 3vw, 2.2rem);">Protect & Grow Your <span class="gold">Business</span></h2>
-      <p class="section-desc">From tax prep to insurance, we connect you with industry-trusted partners so you can focus on what you do best.</p>
-    </div>
-    <div class="platform-grid" style="margin-top: 32px;">
-      <div class="platform-card reveal" style="border-top: 3px solid var(--blue, #1a5a8c);">
-        <div class="platform-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-        <h4>Tax Preparation</h4>
-        <p>Expert tax prep for auto care businesses. Maximize deductions, stay compliant, and keep more of what you earn.</p>
-        <a href="services.html" style="display: inline-block; margin-top: 12px; font-size: 13px; color: var(--gold); text-decoration: none; font-weight: 600; letter-spacing: 0.02em;">Learn More →</a>
-      </div>
-      <div class="platform-card reveal" style="border-top: 3px solid #1a7a50;">
-        <div class="platform-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h4>General Liability Insurance</h4>
-        <p>Protect your business from unexpected claims. Coverage designed for the unique risks auto care professionals face.</p>
-        <a href="quote.html?service=gl" style="display: inline-block; margin-top: 12px; font-size: 13px; color: var(--gold); text-decoration: none; font-weight: 600; letter-spacing: 0.02em;">Get a Free Quote →</a>
-      </div>
-      <div class="platform-card reveal" style="border-top: 3px solid #b45309;">
-        <div class="platform-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <h4>Garage & Shop Insurance</h4>
-        <p>Comprehensive coverage for your physical location — shop, equipment, tools, and inventory protection.</p>
-        <a href="quote.html?service=garage" style="display: inline-block; margin-top: 12px; font-size: 13px; color: var(--gold); text-decoration: none; font-weight: 600; letter-spacing: 0.02em;">Get a Free Quote →</a>
-      </div>
-      <div class="platform-card reveal" style="border-top: 3px solid #6b21a8;">
-        <div class="platform-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"/><path d="M16 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-1"/><path d="M1 14h15"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-        <h4>Auto & Vehicle Insurance</h4>
-        <p>Coverage for business vehicles and personal cars used for mobile detailing. Stay protected on the road.</p>
-        <a href="quote.html?service=auto" style="display: inline-block; margin-top: 12px; font-size: 13px; color: var(--gold); text-decoration: none; font-weight: 600; letter-spacing: 0.02em;">Get a Free Quote →</a>
-      </div>
-    </div>
   </div>
 </section>
 
