@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Get an Insurance Quote — Business Coverage for Auto Detailers | ACG Pro Hub</title>
-<meta name="description" content="Get an instant insurance quote for your auto detailing business. General liability, garage, vehicle coverage, and tax prep tailored for auto care professionals.">
+<meta name="description" content="Get an instant insurance quote for your auto detailing business. General liability, garage, and vehicle coverage tailored for auto care professionals.">
 <meta name="keywords" content="auto detailing insurance quote, detailer liability coverage, garage insurance quote, mobile detailing vehicle insurance, small business tax prep quote">
 <meta name="author" content="Auto Care Genius">
 <link rel="canonical" href="https://hub.autocaregenius.com/quote.html">
@@ -84,7 +84,7 @@
   .step-desc { font-size: 15px; color: var(--text-secondary); font-weight: 300; line-height: 1.6; margin-bottom: 32px; }
 
   /* SERVICE SELECTOR */
-  .svc-selector-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px; }
+  .svc-selector-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 28px; }
   .svc-selector-card { border: 2px solid var(--border); border-radius: 14px; padding: 20px; cursor: pointer; transition: all 0.2s; text-align: center; }
   .svc-selector-card:hover { border-color: rgba(0,0,0,0.15); }
   .svc-selector-card .svc-sel-icon { font-size: 28px; margin-bottom: 8px; }
@@ -93,7 +93,6 @@
   .svc-selector-card.selected-gl { border-color: var(--green); background: var(--green-bg); }
   .svc-selector-card.selected-garage { border-color: var(--orange); background: var(--orange-bg); }
   .svc-selector-card.selected-auto { border-color: var(--purple); background: var(--purple-bg); }
-  .svc-selector-card.selected-tax { border-color: var(--blue); background: var(--blue-bg); }
 
   /* FORM FIELDS */
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
@@ -140,7 +139,6 @@
   .quote-result-card.svc-gl { border-color: var(--green-border); background: var(--green-bg); }
   .quote-result-card.svc-garage { border-color: var(--orange-border); background: var(--orange-bg); }
   .quote-result-card.svc-auto { border-color: var(--purple-border); background: var(--purple-bg); }
-  .quote-result-card.svc-tax { border-color: var(--blue-border); background: var(--blue-bg); }
   .quote-svc-label { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
   .quote-price { font-family: 'Space Mono', monospace; font-size: clamp(40px, 8vw, 56px); font-weight: 700; letter-spacing: -2px; }
   .quote-period { font-size: 16px; font-weight: 300; color: var(--text-muted); }
@@ -288,8 +286,8 @@
 <!-- HERO -->
 <section class="quote-hero">
   <div class="section-label">Get a Quote</div>
-  <h1>Your Custom <span class="gold">Quote</span> in Minutes</h1>
-  <p>Tell us about your business, and we'll match you with the right coverage at the best rate. Free, fast, no obligation.</p>
+  <h1>Your Insurance <span class="gold">Quote</span> in Minutes</h1>
+  <p>Tell us about your business, and we'll match you with the right insurance coverage at the best rate. Free, fast, no obligation.</p>
 </section>
 
 <!-- QUOTE FLOW -->
@@ -345,11 +343,6 @@
             <div class="svc-sel-icon">&#128663;</div>
             <div class="svc-sel-name">Auto &amp; Vehicle</div>
             <div class="svc-sel-desc">Business vehicle coverage</div>
-          </div>
-          <div class="svc-selector-card" data-svc="tax" onclick="selectService('tax')">
-            <div class="svc-sel-icon">&#128196;</div>
-            <div class="svc-sel-name">Tax Preparation</div>
-            <div class="svc-sel-desc">Expert filing help</div>
           </div>
         </div>
 
@@ -476,21 +469,6 @@
                 <label class="vehicle-check"><input type="checkbox" value="Van"> Van</label>
                 <label class="vehicle-check"><input type="checkbox" value="Trailer"> Trailer</label>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tax Fields -->
-        <div class="conditional-fields" id="fields-tax">
-          <div class="field-section-label">Tax Preparation Details</div>
-          <div class="form-row">
-            <div>
-              <label for="q-entity">Business Entity Type</label>
-              <select id="q-entity"><option value="">Select...</option><option value="sole-prop">Sole Proprietorship</option><option value="llc">LLC</option><option value="s-corp">S-Corp</option><option value="c-corp">C-Corp</option><option value="partnership">Partnership</option></select>
-            </div>
-            <div>
-              <label for="q-taxyear">Tax Year End</label>
-              <select id="q-taxyear"><option value="dec">December 31</option><option value="other">Other</option></select>
             </div>
           </div>
         </div>
@@ -709,8 +687,8 @@
   };
 
   // ═══ SERVICE LABELS ═══
-  const SVC_LABELS = { gl: 'General Liability Insurance', garage: 'Garage & Shop Insurance', auto: 'Auto & Vehicle Insurance', tax: 'Tax Preparation Service' };
-  const SVC_COLORS = { gl: 'green', garage: 'orange', auto: 'purple', tax: 'blue' };
+  const SVC_LABELS = { gl: 'General Liability Insurance', garage: 'Garage & Shop Insurance', auto: 'Auto & Vehicle Insurance' };
+  const SVC_COLORS = { gl: 'green', garage: 'orange', auto: 'purple' };
 
   // ═══ SELECT SERVICE ═══
   window.selectService = function(svc) {
@@ -720,20 +698,10 @@
       if (c.dataset.svc === svc) c.classList.add('selected-' + svc);
     });
     // Show/hide conditional fields on step 2
-    ['gl','garage','auto','tax'].forEach(s => {
+    ['gl','garage','auto'].forEach(s => {
       const el = document.getElementById('fields-' + s);
       if (el) el.classList.toggle('show', s === svc);
     });
-    // Show/hide coverage grid for tax (tax doesn't need coverage amount)
-    const covGrid = document.getElementById('coverage-grid');
-    const covLabel = document.getElementById('coverage-label');
-    if (svc === 'tax') {
-      covGrid.style.display = 'none';
-      covLabel.style.display = 'none';
-    } else {
-      covGrid.style.display = '';
-      covLabel.style.display = '';
-    }
   };
 
   // ═══ TOGGLE INSURANCE ═══
@@ -778,8 +746,7 @@
   const BASE_RATES = {
     gl:     { basic: 39,  standard: 69,  premium: 119 },
     garage: { basic: 79,  standard: 129, premium: 199 },
-    auto:   { basic: 89,  standard: 149, premium: 229 },
-    tax:    { basic: 199, standard: 299, premium: 449 }
+    auto:   { basic: 89,  standard: 149, premium: 229 }
   };
 
   function calculateQuote() {
@@ -788,10 +755,8 @@
     let base = BASE_RATES[svc].standard;
 
     // Coverage modifier
-    if (svc !== 'tax') {
-      const covMult = { '300k': 0.75, '500k': 1.0, '1m': 1.45, '2m': 1.9 };
-      base *= (covMult[Q.coverageAmount] || 1.0);
-    }
+    const covMult = { '300k': 0.75, '500k': 1.0, '1m': 1.45, '2m': 1.9 };
+    base *= (covMult[Q.coverageAmount] || 1.0);
 
     // Employee modifier
     const emp = document.getElementById('q-employees').value;
@@ -840,15 +805,14 @@
     const { monthly, annual, tier } = calculateQuote();
     const svc = Q.serviceType;
     const color = SVC_COLORS[svc];
-    const isTax = svc === 'tax';
 
     // Result card
     const card = document.getElementById('quote-result-card');
     card.className = 'quote-result-card svc-' + svc;
     document.getElementById('quote-svc-label').textContent = SVC_LABELS[svc];
     document.getElementById('quote-price').textContent = '$' + monthly.toFixed(2);
-    document.querySelector('.quote-period').textContent = isTax ? '/year' : '/month';
-    document.getElementById('quote-annual').textContent = isTax ? 'One-time annual filing fee' : '$' + annual.toLocaleString() + '/year billed annually (save 12%)';
+    document.querySelector('.quote-period').textContent = '/month';
+    document.getElementById('quote-annual').textContent = '$' + annual.toLocaleString() + '/year billed annually (save 12%)';
 
     const badge = document.getElementById('quote-tier-badge');
     badge.textContent = tier.charAt(0).toUpperCase() + tier.slice(1);
@@ -867,7 +831,7 @@
       return '<div class="tier-card' + (isRec ? ' recommended' : '') + (isSel ? ' selected' : '') + '" style="' + (isSel ? 'border-color:var(--'+color+');border-width:2px;' : '') + '">' +
         '<div class="tier-name">' + t + '</div>' +
         '<div class="tier-price">$' + rate + '</div>' +
-        '<div class="tier-period">' + (isTax ? '/year' : '/mo base') + '</div>' +
+        '<div class="tier-period">/mo base</div>' +
         '<ul class="tier-features">' + features.map(f => '<li>' + f + '</li>').join('') + '</ul>' +
       '</div>';
     }).join('');
@@ -881,8 +845,7 @@
     const features = {
       gl: { basic: ['$300k coverage','Third-party claims','Basic legal defense'], standard: ['$500k–$1M coverage','Property damage','Legal defense','Customer claims'], premium: ['Up to $2M coverage','Full legal defense','Completed operations','Advertising injury'] },
       garage: { basic: ['Building coverage','Basic equipment','$25k tools'], standard: ['Full property','Equipment to $100k','Business interruption','Inventory'], premium: ['Premium property','Unlimited equipment','Full interruption','Cyber liability'] },
-      auto: { basic: ['1 vehicle','Liability only','Roadside assist'], standard: ['Up to 3 vehicles','Comprehensive + collision','Roadside + towing'], premium: ['Fleet coverage','Full comprehensive','Cargo coverage','Rental reimbursement'] },
-      tax: { basic: ['Basic filing','Schedule C','State return'], standard: ['Full preparation','Deduction review','Quarterly estimates','State + Federal'], premium: ['Full service','Tax planning','Audit support','Bookkeeping review'] }
+      auto: { basic: ['1 vehicle','Liability only','Roadside assist'], standard: ['Up to 3 vehicles','Comprehensive + collision','Roadside + towing'], premium: ['Fleet coverage','Full comprehensive','Cargo coverage','Rental reimbursement'] }
     };
     return (features[svc] && features[svc][tier]) || [];
   }
@@ -891,8 +854,7 @@
     const includes = {
       gl: ['Property damage coverage','Bodily injury liability','Customer vehicle claims','Slip-and-fall protection','Legal defense costs','Completed operations','Advertising injury','Certificate of Insurance'],
       garage: ['Building & structure coverage','Equipment replacement','Tool coverage','Chemical & inventory','Business interruption','Fire & weather damage','Theft protection','Liability add-on available'],
-      auto: ['Commercial auto liability','Comprehensive coverage','Collision coverage','Roadside assistance','Towing coverage','Medical payments','Uninsured motorist','Multi-vehicle discounts'],
-      tax: ['Federal tax return','State tax return','Schedule C preparation','Deduction maximization','Quarterly estimate help','1099/W-2 preparation','Digital filing','Year-round support']
+      auto: ['Commercial auto liability','Comprehensive coverage','Collision coverage','Roadside assistance','Towing coverage','Medical payments','Uninsured motorist','Multi-vehicle discounts']
     };
     return includes[svc] || [];
   }
@@ -900,7 +862,6 @@
   // ═══ RENDER CONFIRM ═══
   function renderConfirm() {
     const svc = Q.serviceType;
-    const isTax = svc === 'tax';
     const effectiveDate = new Date();
     effectiveDate.setDate(effectiveDate.getDate() + 1);
     if (effectiveDate.getDay() === 0) effectiveDate.setDate(effectiveDate.getDate() + 1);
@@ -911,9 +872,9 @@
       { label: 'Owner', value: document.getElementById('q-owner').value },
       { label: 'Coverage Type', value: SVC_LABELS[svc] },
       { label: 'Tier', value: Q.quoteTier.charAt(0).toUpperCase() + Q.quoteTier.slice(1) },
-      { label: isTax ? 'Annual Fee' : 'Monthly Premium', value: '$' + Q.quotedMonthly.toFixed(2) }
+      { label: 'Monthly Premium', value: '$' + Q.quotedMonthly.toFixed(2) },
+      { label: 'Annual (save 12%)', value: '$' + Q.quotedAnnual.toLocaleString() }
     ];
-    if (!isTax) rows.push({ label: 'Annual (save 12%)', value: '$' + Q.quotedAnnual.toLocaleString() });
     rows.push({ label: 'Effective Date', value: effectiveDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) });
 
     document.getElementById('confirm-summary').innerHTML = rows.map(r =>
@@ -1013,7 +974,7 @@
       has_current_insurance: Q.hasCurrent,
       current_provider: Q.hasCurrent ? (document.getElementById('q-provider').value.trim() || null) : null,
       current_premium_monthly: Q.hasCurrent ? (parseFloat(document.getElementById('q-premium').value) || null) : null,
-      coverage_amount: Q.serviceType !== 'tax' ? Q.coverageAmount : null,
+      coverage_amount: Q.coverageAmount,
       gl_sq_footage: Q.serviceType === 'gl' ? (parseInt(document.getElementById('q-sqft').value) || null) : null,
       gl_mobile_only: Q.serviceType === 'gl' ? Q.mobileOnly : null,
       garage_building_value: Q.serviceType === 'garage' ? (document.getElementById('q-building').value || null) : null,
@@ -1021,7 +982,7 @@
       garage_inventory_value: Q.serviceType === 'garage' ? (document.getElementById('q-inventory').value || null) : null,
       auto_num_vehicles: Q.serviceType === 'auto' ? (parseInt(document.getElementById('q-vehicles').value) || null) : null,
       auto_vehicle_types: Q.serviceType === 'auto' ? (vehicleTypes.length ? vehicleTypes : null) : null,
-      tax_entity_type: Q.serviceType === 'tax' ? (document.getElementById('q-entity').value || null) : null,
+      tax_entity_type: null,
       quoted_monthly: Q.quotedMonthly,
       quoted_annual: Q.quotedAnnual,
       quote_tier: Q.quoteTier,
@@ -1078,7 +1039,7 @@
       has_current_insurance: Q.hasCurrent,
       current_provider: Q.hasCurrent ? (document.getElementById('q-provider').value.trim() || null) : null,
       current_premium_monthly: Q.hasCurrent ? (parseFloat(document.getElementById('q-premium').value) || null) : null,
-      coverage_amount: Q.serviceType !== 'tax' ? Q.coverageAmount : null,
+      coverage_amount: Q.coverageAmount,
       quoted_monthly: Q.quotedMonthly,
       quoted_annual: Q.quotedAnnual,
       quote_tier: Q.quoteTier,
@@ -1111,7 +1072,7 @@
   // ═══ URL PARAM (must run after all functions defined) ═══
   const params = new URLSearchParams(window.location.search);
   const urlSvc = params.get('service');
-  if (['gl','garage','auto','tax'].includes(urlSvc)) {
+  if (['gl','garage','auto'].includes(urlSvc)) {
     window.selectService(urlSvc);
   }
 })();
