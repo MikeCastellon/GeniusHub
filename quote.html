@@ -712,13 +712,6 @@
   const SVC_LABELS = { gl: 'General Liability Insurance', garage: 'Garage & Shop Insurance', auto: 'Auto & Vehicle Insurance', tax: 'Tax Preparation Service' };
   const SVC_COLORS = { gl: 'green', garage: 'orange', auto: 'purple', tax: 'blue' };
 
-  // ═══ URL PARAM ═══
-  const params = new URLSearchParams(window.location.search);
-  const urlSvc = params.get('service');
-  if (['gl','garage','auto','tax'].includes(urlSvc)) {
-    window.selectService(urlSvc);
-  }
-
   // ═══ SELECT SERVICE ═══
   window.selectService = function(svc) {
     Q.serviceType = svc;
@@ -1114,6 +1107,13 @@
     entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ═══ URL PARAM (must run after all functions defined) ═══
+  const params = new URLSearchParams(window.location.search);
+  const urlSvc = params.get('service');
+  if (['gl','garage','auto','tax'].includes(urlSvc)) {
+    window.selectService(urlSvc);
+  }
 })();
 </script>
 </body>
