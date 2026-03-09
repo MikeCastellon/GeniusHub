@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Auto Detailers Near You — ACG Pro Hub Detailer Directory</title>
+<meta name="description" content="Browse our directory of verified auto detailers, car washes, tint shops, and auto care professionals. Find top-rated shops near you or list your own business.">
+<meta name="keywords" content="find auto detailer, detailing directory, car detailer near me, mobile detailing directory, auto care professionals, tint shop directory">
+<meta name="author" content="Auto Care Genius">
+<link rel="canonical" href="https://hub.autocaregenius.com/directory.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find Auto Detailers Near You — ACG Pro Hub Detailer Directory">
+<meta property="og:description" content="Browse verified auto detailers, car washes, tint shops and auto care professionals. Find top-rated shops or list your business.">
+<meta property="og:url" content="https://hub.autocaregenius.com/directory.html">
+<meta property="og:site_name" content="Auto Care Genius Pro Hub">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#cc0000">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"ACG Pro Hub Detailer Directory","description":"Browse verified auto detailers and auto care professionals near you.","url":"https://hub.autocaregenius.com/directory.html","publisher":{"@type":"Organization","name":"Auto Care Genius Pro Hub","url":"https://hub.autocaregenius.com"}}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #111; --white: #ffffff; --cream: #faf9f7; --sand: #f2f0ec;
+    --gold: #cc0000; --gold-bright: #e60000; --gold-bg: rgba(204,0,0,0.06); --gold-border: rgba(204,0,0,0.15);
+    --blue: #1a5a8c; --blue-light: #2178b8; --blue-bg: rgba(26,90,140,0.06); --blue-border: rgba(26,90,140,0.12);
+    --green: #1a7a50; --green-light: #22996a; --green-bg: rgba(26,122,80,0.06); --green-border: rgba(26,122,80,0.12);
+    --text: #1a1a1a; --text-secondary: #555; --text-muted: #888;
+    --border: rgba(0,0,0,0.07); --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Outfit', sans-serif; background: var(--white); color: var(--text); -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 100; padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; backdrop-filter: blur(20px); background: rgba(255,255,255,0.92); border-bottom: 1px solid var(--border); }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo-img { height: 32px; width: auto; }
+  .nav-logo-divider { width: 1px; height: 24px; background: var(--border); }
+  .nav-logo-text { font-weight: 700; font-size: 17px; color: var(--text); letter-spacing: -0.5px; }
+  .nav-logo-text span { color: var(--gold); }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.3px; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a.active { color: var(--gold); }
+  .nav-cta { background: var(--text) !important; color: var(--white) !important; padding: 10px 22px !important; border-radius: 8px; font-weight: 600 !important; transition: all 0.3s !important; }
+  .nav-cta:hover { background: var(--gold) !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+
+  /* HERO */
+  .dir-hero { background: var(--cream); padding: 100px 40px 72px; text-align: center; border-bottom: 1px solid var(--border); }
+  .section-label { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .dir-hero h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 900; letter-spacing: -2px; line-height: 1.1; margin-bottom: 16px; }
+  .dir-hero h1 .gold { color: var(--gold); }
+  .dir-hero p { font-size: clamp(16px, 2vw, 19px); font-weight: 300; color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.65; }
+  .dir-hero-stats { display: flex; gap: 40px; justify-content: center; margin-top: 40px; }
+  .dir-stat { text-align: center; }
+  .dir-stat-num { font-family: 'Space Mono', monospace; font-size: 22px; font-weight: 700; color: var(--gold); }
+  .dir-stat-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* SEARCH / FILTERS */
+  .dir-filters { padding: 32px 40px 0; }
+  .dir-filters-inner { max-width: 1140px; margin: 0 auto; display: flex; gap: 12px; flex-wrap: wrap; }
+  .dir-search { flex: 1; min-width: 240px; padding: 14px 18px; border: 1px solid var(--border); border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 15px; outline: none; transition: border-color 0.3s; }
+  .dir-search:focus { border-color: var(--gold); }
+  .dir-select { padding: 14px 18px; border: 1px solid var(--border); border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 15px; background: var(--white); cursor: pointer; outline: none; min-width: 180px; transition: border-color 0.3s; appearance: none; background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23888' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+  .dir-select:focus { border-color: var(--gold); }
+
+  /* LISTINGS GRID */
+  .dir-section { padding: 40px 40px 80px; }
+  .dir-section-inner { max-width: 1140px; margin: 0 auto; }
+  .dir-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .dir-empty { grid-column: 1 / -1; text-align: center; padding: 80px 20px; color: var(--text-muted); }
+  .dir-empty h3 { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .dir-empty p { font-size: 15px; font-weight: 300; }
+
+  /* DIRECTORY CARD */
+  .dir-card { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: all 0.3s; background: var(--white); }
+  .dir-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.05); transform: translateY(-3px); }
+  .dir-card.featured { border-color: var(--gold-border); }
+  .dir-card.featured .dir-card-header { background: var(--gold-bg); }
+  .dir-card-header { padding: 24px 24px 0; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .dir-card-name { font-size: 18px; font-weight: 700; letter-spacing: -0.3px; line-height: 1.3; }
+  .dir-card-badge { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 100px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
+  .badge-acg { background: var(--gold-bg); color: var(--gold); border: 1px solid var(--gold-border); }
+  .badge-featured { background: var(--gold); color: var(--white); }
+  .dir-card-body { padding: 16px 24px 24px; }
+  .dir-card-location { font-size: 13px; color: var(--text-muted); font-weight: 400; margin-bottom: 10px; display: flex; align-items: center; gap: 4px; }
+  .dir-card-desc { font-size: 13px; color: var(--text-secondary); font-weight: 300; line-height: 1.55; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .dir-card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .dir-tag { padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; background: var(--cream); color: var(--text-secondary); border: 1px solid var(--border); }
+  .dir-card-actions { display: flex; gap: 10px; }
+  .dir-card-actions a { font-size: 13px; font-weight: 600; text-decoration: none; transition: color 0.3s; }
+  .dir-card-actions a.dir-phone { color: var(--text-secondary); }
+  .dir-card-actions a.dir-phone:hover { color: var(--gold); }
+  .dir-card-actions a.dir-website { color: var(--gold); display: inline-flex; align-items: center; gap: 4px; }
+  .dir-card-actions a.dir-website:hover { gap: 8px; }
+
+  /* LOADING */
+  .dir-loading { grid-column: 1 / -1; text-align: center; padding: 60px 20px; }
+  .dir-spinner { width: 32px; height: 32px; border: 3px solid var(--border); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* REGISTER SECTION */
+  .dir-register { background: var(--cream); padding: 80px 40px; border-top: 1px solid var(--border); }
+  .dir-register-inner { max-width: 720px; margin: 0 auto; }
+  .dir-register-header { text-align: center; margin-bottom: 48px; }
+  .dir-register-header h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .dir-register-header h2 .gold { color: var(--gold); }
+  .dir-register-header p { font-size: 16px; color: var(--text-secondary); font-weight: 300; line-height: 1.6; }
+
+  .dir-form { background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 44px; }
+  .dir-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .dir-form-full { margin-bottom: 16px; }
+  .dir-form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .dir-form label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text); }
+  .dir-form input, .dir-form select, .dir-form textarea { width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 15px; outline: none; transition: border-color 0.3s; background: var(--white); }
+  .dir-form input:focus, .dir-form select:focus, .dir-form textarea:focus { border-color: var(--gold); }
+  .dir-form textarea { resize: vertical; min-height: 100px; }
+
+  .dir-form-services { margin-bottom: 20px; }
+  .dir-form-services label.group-label { font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+  .dir-services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .dir-service-check { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.2s; font-size: 14px; font-weight: 400; }
+  .dir-service-check:hover { border-color: var(--gold-border); background: var(--gold-bg); }
+  .dir-service-check input { accent-color: var(--gold); width: 16px; height: 16px; }
+  .dir-service-check.checked { border-color: var(--gold-border); background: var(--gold-bg); }
+
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 30px; border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: all 0.3s ease; }
+  .btn-primary { background: var(--text); color: var(--white); }
+  .btn-primary:hover { background: var(--gold); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
+  .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+  .btn-arrow { transition: transform 0.3s; }
+  .btn:hover .btn-arrow { transform: translateX(4px); }
+  .btn-submit { width: 100%; justify-content: center; margin-top: 8px; }
+
+  .dir-form-success { display: none; text-align: center; padding: 48px 24px; }
+  .dir-form-success.show { display: block; }
+  .dir-form-success .success-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--green-bg); border: 2px solid var(--green-border); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--green); }
+  .dir-form-success h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+  .dir-form-success p { font-size: 15px; color: var(--text-secondary); font-weight: 300; line-height: 1.6; }
+  .dir-form-error { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 16px; display: none; }
+
+  /* CTA */
+  .cta-section { background: var(--white); padding: 80px 40px; }
+  .cta-inner { max-width: 1140px; margin: 0 auto; background: var(--cream); border: 1px solid var(--border); border-radius: 22px; padding: 72px; text-align: center; position: relative; overflow: hidden; }
+  .cta-inner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #1a5a8c, #cc0000, #1a7a50); }
+  .cta-inner h2 { font-size: clamp(26px, 4vw, 40px); font-weight: 900; letter-spacing: -2px; margin-bottom: 14px; }
+  .cta-inner h2 .gold { color: var(--gold); }
+  .cta-inner p { font-size: 17px; color: var(--text-secondary); font-weight: 300; margin-bottom: 36px; }
+  .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-secondary { background: var(--white); color: var(--text); border: 1px solid var(--border); }
+  .btn-secondary:hover { border-color: rgba(0,0,0,0.15); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+
+  /* FOOTER */
+  footer { padding: 56px 40px 36px; background: var(--cream); border-top: 1px solid var(--border); }
+  .footer-inner { max-width: 1140px; margin: 0 auto; }
+  .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 44px; flex-wrap: wrap; gap: 40px; }
+  .footer-brand p { color: var(--text-secondary); font-size: 13px; margin-top: 12px; max-width: 280px; line-height: 1.55; font-weight: 300; }
+  .footer-links-group { display: flex; gap: 56px; }
+  .footer-col h5 { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 14px; font-weight: 600; }
+  .footer-col a { display: block; color: var(--text-secondary); text-decoration: none; font-size: 13px; margin-bottom: 9px; transition: color 0.3s; font-weight: 300; }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom { padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-bottom p { font-size: 12px; color: var(--text-muted); font-weight: 300; }
+  .footer-bottom a { font-size: 12px; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+  .footer-bottom a:hover { color: var(--gold); }
+  .powered-by { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .powered-by-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; }
+  .powered-by-logo { height: 22px; width: auto; }
+
+  /* ANIMATIONS */
+  .reveal { opacity: 0; transform: translateY(28px); transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) { .dir-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; } .nav-links { display: none; }
+    .dir-hero { padding: 80px 20px 52px; } .dir-hero-stats { flex-direction: column; gap: 16px; }
+    .dir-filters { padding: 24px 20px 0; } .dir-filters-inner { flex-direction: column; }
+    .dir-section { padding: 24px 20px 60px; } .dir-grid { grid-template-columns: 1fr; }
+    .dir-register { padding: 60px 20px; } .dir-form { padding: 28px 20px; }
+    .dir-form-row, .dir-form-row-3 { grid-template-columns: 1fr; } .dir-services-grid { grid-template-columns: 1fr; }
+    .cta-inner { padding: 44px 24px; } .cta-buttons { flex-direction: column; align-items: center; }
+    .footer-top { flex-direction: column; } .footer-links-group { gap: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://www.autocaregenius.com/cdn/shop/files/v11_1.svg?v=1760731533&width=160" alt="Auto Care Genius" class="nav-logo-img">
+    <div class="nav-logo-divider"></div>
+    <div class="nav-logo-text">Pro <span>Hub</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#how">How It Works</a>
+    <a href="directory.html" class="active">Directory</a>
+    <a href="blog.html">Blog</a>
+    <a href="https://autocaregenius.com" target="_blank">Shop Supplies</a>
+    <a href="index.html#cta" class="nav-cta">Get Started Free</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="dir-hero">
+  <div class="section-label">Detailer Directory</div>
+  <h1>Find a Detailer<br><span class="gold">Near You.</span></h1>
+  <p>Browse verified auto care professionals across the country. Looking for a detailer, tint shop, or car wash? We've got you covered.</p>
+  <div class="dir-hero-stats">
+    <div class="dir-stat">
+      <div class="dir-stat-num" id="stat-total">--</div>
+      <div class="dir-stat-label">Listed Shops</div>
+    </div>
+    <div class="dir-stat">
+      <div class="dir-stat-num">50</div>
+      <div class="dir-stat-label">States Covered</div>
+    </div>
+    <div class="dir-stat">
+      <div class="dir-stat-num">7</div>
+      <div class="dir-stat-label">Service Categories</div>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH / FILTERS -->
+<div class="dir-filters">
+  <div class="dir-filters-inner">
+    <input type="text" class="dir-search" id="dir-search" placeholder="Search by business name or city...">
+    <select class="dir-select" id="dir-state">
+      <option value="">All States</option>
+    </select>
+    <select class="dir-select" id="dir-service">
+      <option value="">All Services</option>
+      <option value="Mobile Detailing">Mobile Detailing</option>
+      <option value="Detail Shop">Detail Shop</option>
+      <option value="Car Wash">Car Wash</option>
+      <option value="Tint Shop">Tint Shop</option>
+      <option value="PPF/Wrap">PPF / Wrap</option>
+      <option value="Ceramic Coating">Ceramic Coating</option>
+      <option value="Paint Correction">Paint Correction</option>
+    </select>
+  </div>
+</div>
+
+<!-- LISTINGS -->
+<section class="dir-section">
+  <div class="dir-section-inner">
+    <div class="dir-grid" id="dir-grid">
+      <div class="dir-loading" id="dir-loading">
+        <div class="dir-spinner"></div>
+        <p style="color: var(--text-muted); font-size: 14px;">Loading directory...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="dir-register" id="register">
+  <div class="dir-register-inner">
+    <div class="dir-register-header reveal">
+      <div class="section-label">Get Listed</div>
+      <h2>List Your <span class="gold">Business</span></h2>
+      <p>Join our growing directory of auto care professionals. Get discovered by local customers and showcase your services. It's free to register.</p>
+    </div>
+
+    <div class="dir-form reveal" id="register-form-wrap">
+      <div class="dir-form-error" id="form-error"></div>
+
+      <form id="register-form">
+        <div class="dir-form-row">
+          <div>
+            <label for="reg-business">Business Name *</label>
+            <input type="text" id="reg-business" required>
+          </div>
+          <div>
+            <label for="reg-owner">Owner Name *</label>
+            <input type="text" id="reg-owner" required>
+          </div>
+        </div>
+
+        <div class="dir-form-row">
+          <div>
+            <label for="reg-email">Email *</label>
+            <input type="email" id="reg-email" required>
+          </div>
+          <div>
+            <label for="reg-phone">Phone</label>
+            <input type="tel" id="reg-phone">
+          </div>
+        </div>
+
+        <div class="dir-form-full">
+          <label for="reg-address">Street Address</label>
+          <input type="text" id="reg-address">
+        </div>
+
+        <div class="dir-form-row-3">
+          <div>
+            <label for="reg-city">City *</label>
+            <input type="text" id="reg-city" required>
+          </div>
+          <div>
+            <label for="reg-state">State *</label>
+            <select id="reg-state" required>
+              <option value="">Select...</option>
+            </select>
+          </div>
+          <div>
+            <label for="reg-zip">ZIP Code</label>
+            <input type="text" id="reg-zip" maxlength="10">
+          </div>
+        </div>
+
+        <div class="dir-form-full">
+          <label for="reg-website">Website URL</label>
+          <input type="url" id="reg-website" placeholder="https://yourshop.com">
+        </div>
+
+        <div class="dir-form-services">
+          <label class="group-label">Services Offered *</label>
+          <div class="dir-services-grid" id="services-grid">
+            <label class="dir-service-check"><input type="checkbox" value="Mobile Detailing"> Mobile Detailing</label>
+            <label class="dir-service-check"><input type="checkbox" value="Detail Shop"> Detail Shop</label>
+            <label class="dir-service-check"><input type="checkbox" value="Car Wash"> Car Wash</label>
+            <label class="dir-service-check"><input type="checkbox" value="Tint Shop"> Tint Shop</label>
+            <label class="dir-service-check"><input type="checkbox" value="PPF/Wrap"> PPF / Wrap</label>
+            <label class="dir-service-check"><input type="checkbox" value="Ceramic Coating"> Ceramic Coating</label>
+            <label class="dir-service-check"><input type="checkbox" value="Paint Correction"> Paint Correction</label>
+          </div>
+        </div>
+
+        <div class="dir-form-full">
+          <label for="reg-desc">Business Description</label>
+          <textarea id="reg-desc" placeholder="Tell potential customers about your services, experience, and what makes your shop stand out..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+          Submit Your Business <span class="btn-arrow">→</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="dir-form-success" id="form-success">
+      <div class="success-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3>You're on the List!</h3>
+      <p>Thanks for registering. We'll review your listing and have it live within 24 hours. In the meantime, check out our <a href="https://autosite-builder.netlify.app/" target="_blank" style="color: var(--gold); font-weight: 600;">free AI website builder</a> to get your own professional site.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <h2>Want Your Own <span class="gold">AI Website</span>?</h2>
+    <p>Get a free, AI-generated professional website for your auto care business. Built in minutes, optimized for local search.</p>
+    <div class="cta-buttons">
+      <a href="https://autosite-builder.netlify.app/" target="_blank" class="btn btn-primary">Build My Free AI Website <span class="btn-arrow">→</span></a>
+      <a href="index.html#services" class="btn btn-secondary">Explore All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <img src="https://www.autocaregenius.com/cdn/shop/files/v11_1.svg?v=1760731533&width=160" alt="Auto Care Genius" class="nav-logo-img">
+          <div class="nav-logo-divider"></div>
+          <div class="nav-logo-text">Pro <span>Hub</span></div>
+        </a>
+        <p>The professional platform for detailers, car washes, tint shops, and auto care businesses.</p>
+        <a href="https://autocaregenius.com" target="_blank" class="powered-by" style="margin-top: 16px;">
+          <span class="powered-by-label">Powered by</span>
+          <img src="https://www.autocaregenius.com/cdn/shop/files/v11_1.svg?v=1760731533&width=160" alt="Auto Care Genius" class="powered-by-logo">
+        </a>
+      </div>
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <h5>Platform</h5>
+          <a href="https://autosite-builder.netlify.app/" target="_blank">Free Website</a>
+          <a href="index.html#services">Sales Hub</a>
+          <a href="directory.html">Directory</a>
+          <a href="index.html#platform">SEO Services</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="index.html">Home</a>
+          <a href="https://autocaregenius.com" target="_blank">Shop Supplies</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <a href="index.html#faq">FAQ</a>
+          <a href="blog-01-start-mobile-detailing.html">Getting Started</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Auto Care Genius Pro Hub. All rights reserved.</p>
+      <div>
+        <a href="#">Privacy</a> &nbsp;&middot;&nbsp; <a href="#">Terms</a> &nbsp;&middot;&nbsp; <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- SUPABASE CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+(function() {
+  // ═══ SUPABASE INIT ═══
+  const SUPABASE_URL = 'https://rbtilezwxucnqefukbzi.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJidGlsZXp3eHVjbnFlZnVrYnppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI3NDQyMzYsImV4cCI6MjA4ODMyMDIzNn0.yRmFkjOQYwwdusuqfC67dh3IRusXJdBZiD2gvLydakI';
+  const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  // ═══ US STATES ═══
+  const STATES = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
+  const STATE_NAMES = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'};
+
+  // Populate state dropdowns
+  const stateFilter = document.getElementById('dir-state');
+  const regState = document.getElementById('reg-state');
+  STATES.forEach(s => {
+    stateFilter.innerHTML += '<option value="' + s + '">' + STATE_NAMES[s] + '</option>';
+    regState.innerHTML += '<option value="' + s + '">' + STATE_NAMES[s] + '</option>';
+  });
+
+  // ═══ FETCH & RENDER LISTINGS ═══
+  let allListings = [];
+
+  async function fetchListings() {
+    const { data, error } = await sb
+      .from('directory_listings')
+      .select('*')
+      .eq('status', 'approved')
+      .order('featured', { ascending: false })
+      .order('is_acg_member', { ascending: false })
+      .order('business_name', { ascending: true });
+
+    if (error) { console.error('Fetch error:', error); return []; }
+    return data || [];
+  }
+
+  function renderCard(listing) {
+    const tags = (listing.services_offered || []).map(s => '<span class="dir-tag">' + s + '</span>').join('');
+    const badges = [];
+    if (listing.featured) badges.push('<span class="dir-card-badge badge-featured">Featured</span>');
+    if (listing.is_acg_member) badges.push('<span class="dir-card-badge badge-acg">ACG Member</span>');
+
+    const actions = [];
+    if (listing.phone) actions.push('<a href="tel:' + listing.phone + '" class="dir-phone">' + listing.phone + '</a>');
+    if (listing.website_url) actions.push('<a href="' + listing.website_url + '" target="_blank" rel="noopener" class="dir-website">Visit Site <span>→</span></a>');
+
+    return '<div class="dir-card' + (listing.featured ? ' featured' : '') + ' reveal visible">' +
+      '<div class="dir-card-header">' +
+        '<div class="dir-card-name">' + listing.business_name + '</div>' +
+        (badges.length ? '<div>' + badges.join(' ') + '</div>' : '') +
+      '</div>' +
+      '<div class="dir-card-body">' +
+        '<div class="dir-card-location"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> ' + listing.city + ', ' + listing.state + '</div>' +
+        (listing.description ? '<div class="dir-card-desc">' + listing.description + '</div>' : '') +
+        (tags ? '<div class="dir-card-tags">' + tags + '</div>' : '') +
+        (actions.length ? '<div class="dir-card-actions">' + actions.join('') + '</div>' : '') +
+      '</div>' +
+    '</div>';
+  }
+
+  function renderGrid(listings) {
+    const grid = document.getElementById('dir-grid');
+    if (listings.length === 0) {
+      grid.innerHTML = '<div class="dir-empty"><h3>No listings found</h3><p>Be the first to register your business in our directory!</p></div>';
+      return;
+    }
+    grid.innerHTML = listings.map(renderCard).join('');
+  }
+
+  // ═══ FILTER ═══
+  function filterListings() {
+    const search = document.getElementById('dir-search').value.toLowerCase().trim();
+    const state = document.getElementById('dir-state').value;
+    const service = document.getElementById('dir-service').value;
+
+    let filtered = allListings;
+    if (search) {
+      filtered = filtered.filter(l =>
+        l.business_name.toLowerCase().includes(search) ||
+        l.city.toLowerCase().includes(search) ||
+        (l.description || '').toLowerCase().includes(search)
+      );
+    }
+    if (state) filtered = filtered.filter(l => l.state === state);
+    if (service) filtered = filtered.filter(l => (l.services_offered || []).includes(service));
+
+    renderGrid(filtered);
+  }
+
+  document.getElementById('dir-search').addEventListener('input', filterListings);
+  document.getElementById('dir-state').addEventListener('change', filterListings);
+  document.getElementById('dir-service').addEventListener('change', filterListings);
+
+  // ═══ INIT ═══
+  (async function init() {
+    allListings = await fetchListings();
+    document.getElementById('stat-total').textContent = allListings.length;
+    document.getElementById('dir-loading').remove();
+    renderGrid(allListings);
+  })();
+
+  // ═══ SERVICE CHECKBOXES STYLING ═══
+  document.querySelectorAll('.dir-service-check input').forEach(cb => {
+    cb.addEventListener('change', function() {
+      this.closest('.dir-service-check').classList.toggle('checked', this.checked);
+    });
+  });
+
+  // ═══ REGISTRATION FORM ═══
+  document.getElementById('register-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    const errEl = document.getElementById('form-error');
+    errEl.style.display = 'none';
+
+    // Get checked services
+    const services = [];
+    document.querySelectorAll('#services-grid input:checked').forEach(cb => services.push(cb.value));
+    if (services.length === 0) {
+      errEl.textContent = 'Please select at least one service.';
+      errEl.style.display = 'block';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = 'Submitting...';
+
+    const payload = {
+      business_name: document.getElementById('reg-business').value.trim(),
+      owner_name: document.getElementById('reg-owner').value.trim(),
+      email: document.getElementById('reg-email').value.trim(),
+      phone: document.getElementById('reg-phone').value.trim() || null,
+      address: document.getElementById('reg-address').value.trim() || null,
+      city: document.getElementById('reg-city').value.trim(),
+      state: document.getElementById('reg-state').value,
+      zip: document.getElementById('reg-zip').value.trim() || null,
+      website_url: document.getElementById('reg-website').value.trim() || null,
+      description: document.getElementById('reg-desc').value.trim() || null,
+      services_offered: services,
+      status: 'pending'
+    };
+
+    const { error } = await sb.from('directory_listings').insert([payload]);
+
+    if (error) {
+      console.error('Submit error:', error);
+      errEl.textContent = 'Something went wrong. Please try again.';
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.innerHTML = 'Submit Your Business <span class="btn-arrow">→</span>';
+      return;
+    }
+
+    // Success
+    document.getElementById('register-form-wrap').style.display = 'none';
+    document.getElementById('form-success').classList.add('show');
+  });
+
+  // ═══ SCROLL REVEAL ═══
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+})();
+</script>
+</body>
+</html>
