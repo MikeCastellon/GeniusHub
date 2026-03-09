@@ -235,9 +235,9 @@
 
   .hero-badge {
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
-    gap: 8px;
-    padding: 8px 20px;
+    padding: 10px 24px;
     background: var(--gold-bg);
     border: 1px solid var(--gold-border);
     border-radius: 100px;
@@ -247,21 +247,8 @@
     color: var(--gold);
     letter-spacing: 1.5px;
     text-transform: uppercase;
+    line-height: 1.6;
     animation: fadeInDown 0.8s ease both;
-  }
-
-  .hero-badge::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    background: var(--gold);
-    border-radius: 50%;
-    animation: pulse-dot 2s ease infinite;
-  }
-
-  @keyframes pulse-dot {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
   }
 
   .hero h1 {
@@ -1400,7 +1387,7 @@
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
-  <div class="hero-badge">AI-Powered Platform — Now in Early Access</div>
+  <div class="hero-badge">AI-Powered Platform<br>Now in Early Access</div>
   <h1>
     Run Your Shop<br>
     Like a <span class="gold">Genius.</span>
